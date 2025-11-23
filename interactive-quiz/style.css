@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.quiz-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen {
+    padding: 40px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Welcome Screen */
+#welcome-screen {
+    text-align: center;
+}
+
+#welcome-screen h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#welcome-screen p {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.quiz-info {
+    background: #f0f0f0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: #d0d0d0;
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Quiz Screen */
+.quiz-header {
+    margin-bottom: 30px;
+}
+
+#progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+#progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.quiz-meta {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #666;
+}
+
+#timer {
+    color: #667eea;
+}
+
+#question-container {
+    margin-bottom: 30px;
+}
+
+#question-text {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+/* Options */
+.option {
+    background: #f8f8f8;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.option:hover {
+    border-color: #667eea;
+    background: #f0f0ff;
+    transform: translateX(5px);
+}
+
+.option.selected {
+    border-color: #667eea;
+    background: #e8e8ff;
+}
+
+.option input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.3);
+}
+
+.option label {
+    cursor: pointer;
+    flex: 1;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Navigation */
+#navigation {
+    text-align: right;
+}
+
+/* Results Screen */
+.results-content {
+    text-align: center;
+}
+
+#results-title {
+    color: #333;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+#score-display {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.score-good {
+    color: #4caf50;
+    background: #e8f5e9;
+}
+
+.score-average {
+    color: #ff9800;
+    background: #fff3e0;
+}
+
+.score-poor {
+    color: #f44336;
+    background: #ffebee;
+}
+
+#results-message {
+    font-size: 1.3em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .screen {
+        padding: 30px 20px;
+    }
+
+    #welcome-screen h1 {
+        font-size: 2em;
+    }
+
+    #question-text {
+        font-size: 1.3em;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
